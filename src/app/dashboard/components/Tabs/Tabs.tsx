@@ -5,7 +5,13 @@ import { NavigationTabsProps } from "./types";
 
 const NavigationTabs = ({ activeTab, setActiveTab }: NavigationTabsProps) => {
   return (
-    <Tabs className="w-full" value={activeTab} onValueChange={setActiveTab}>
+    <Tabs
+      className="w-full"
+      value={activeTab}
+      onValueChange={(value) => {
+        setActiveTab(value);
+      }}
+    >
       <TabsList className="self-center">
         {TABS_MENU.map((menu) => (
           <TabsTrigger

@@ -5,4 +5,4 @@ export type CitizenCardProps = {
     CitizenData,
     "name" | "status" | "gender"
   >]: CitizenData[key];
-} & { imageUrl: string; location: string; onClick: VoidFunction };
+} & { imageUrl: string; location: string; onClick?: VoidFunction };

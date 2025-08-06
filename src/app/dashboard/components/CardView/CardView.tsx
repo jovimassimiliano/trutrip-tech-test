@@ -45,7 +45,7 @@ const CardView = ({ citizens, isLoading }: CardViewProps) => {
           gender={citizen.gender}
         />
       ))}
-      {Boolean(selectedCitizen) && (
+      {selectedCitizen && (
         <CitizenDetail
           citizen={selectedCitizen}
           onClose={() => {
