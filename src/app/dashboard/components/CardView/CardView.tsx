@@ -5,6 +5,7 @@ import { CardViewProps } from "./types";
 import { useState } from "react";
 import CitizenDetail from "./components/CitizenDetail";
 import { CitizenData } from "@/services/api/citizens/types";
+import Heading from "@/components/Typography/Heading";
 
 const CardView = ({ citizens, isLoading }: CardViewProps) => {
   const [selectedCitizen, setSelectCitizen] = useState<CitizenData | undefined>(
@@ -26,6 +27,13 @@ const CardView = ({ citizens, isLoading }: CardViewProps) => {
             </CardContent>
           </Card>
         ))}
+      </div>
+    );
+  } else if (citizens.length === 0) {
+    return (
+      <div className="flex flex-col gap-6 h-75 items-center justify-center">
+        <Heading variant="h4">No citizen found</Heading>
+        <p>Try adjusting your search</p>
       </div>
     );
   }

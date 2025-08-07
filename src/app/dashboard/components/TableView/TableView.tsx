@@ -13,6 +13,7 @@ import Skeleton from "@/components/Skeleton";
 import { useState } from "react";
 import { CitizenData } from "@/services/api/citizens/types";
 import CitizenDetail from "../CardView/components/CitizenDetail";
+import EmptySearch from "../EmptySearch";
 
 const TableView = ({ citizens, isLoading }: TableViewProps) => {
   const [selectedCitizen, setSelectedCitizen] = useState<
@@ -44,7 +45,7 @@ const TableView = ({ citizens, isLoading }: TableViewProps) => {
         </TableBody>
       </Table>
     );
-  }
+  } else if (citizens.length === 0) return <EmptySearch />;
 
   return (
     <>
