@@ -8,6 +8,9 @@ export default defineConfig({
     globals: true,
     environment: "happy-dom",
     setupFiles: ["./vitest.setup.ts"],
+    env: {
+      NEXT_PUBLIC_API_URL: "https://rickandmortyapi.com/api",
+    },
   },
   resolve: {
     alias: {
