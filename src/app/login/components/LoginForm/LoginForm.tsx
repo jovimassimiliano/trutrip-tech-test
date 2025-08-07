@@ -43,7 +43,7 @@ const LoginForm = () => {
   return (
     <>
       <DevTool control={control} />
-      <Card className="sm: w-1/3">
+      <Card className="w-3/4 md:w-1/2 lg:w-1/3">
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardDescription>Enter your email to login</CardDescription>
