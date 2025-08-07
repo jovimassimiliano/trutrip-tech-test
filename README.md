@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Open Census
 
-## Getting Started
+Open Census is a web application to discover citizens data using the Rick and Morty API.
 
-First, run the development server:
+## 🚀 Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Check out the live demo: [Open Census App](https://trutrip-tech-test.vercel.app/)
+
+## 📋 Description
+
+Open Census is a modern web application that allows users to explore and discover citizens data in an intuitive and user-friendly interface. The application leverages the [Rick and Morty API](https://rickandmortyapi.com/) to provide comprehensive character information and statistics.
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js installed on your machine.
+
+### Local Development
+
+Follow these steps to run the application locally:
+
+1. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+2. **Environment Configuration**
+
+   Create a `.env` file in the root directory and add the following environment variable:
+
+   ```env
+   NEXT_PUBLIC_API_URL=https://rickandmortyapi.com/api
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   ```
+
+The application will be available at `http://localhost:3000`.
+
+## 📁 Project Structure
+
+```
+open-census/
+├── public/                 # Static assets
+├── src/
+│   ├── app/               # App routing feature based (Next.js App Router)
+│   ├── components/        # Reusable UI components
+│   ├── constants/         # Shared common constants and configuration values
+│   ├── hooks/             # Reusable custom React hooks
+│   ├── lib/               # Common library configurations
+│   ├── mocks/             # Data mocking for testing purposes
+│   ├── services/          # External service and API clients
+│   ├── store/             # Centralized state management
+│   └── utils/             # Common utility functions and helpers
+├── .env                   # Environment variables
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Folder Descriptions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **`public/`** - Contains static assets like images, icons, and other files served directly
+- **`src/app/`** - Next.js App Router directory for file-based routing and page components
+- **`src/components/`** - Reusable React components used throughout the application
+- **`src/constants/`** - Application-wide constants and configuration values
+- **`src/hooks/`** - Custom React hooks for shared logic and state management
+- **`src/lib/`** - Third-party library configurations and setup
+- **`src/mocks/`** - Mock data and testing utilities
+- **`src/services/`** - API clients and external service integrations
+- **`src/store/`** - State management setup (Redux, Zustand, etc.)
+- **`src/utils/`** - Helper functions and utility methods
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Technologies Used
 
-## Learn More
+- **Framework**: Next.js
+- **API**: Rick and Morty API
+- **Package Manager**: npm/pnpm
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 API Reference
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses the [Rick and Morty API](https://rickandmortyapi.com/) to fetch character data. The API provides information about characters, locations, and episodes from the Rick and Morty universe.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
