@@ -35,6 +35,9 @@ const LoginForm = () => {
 
   const handleSubmitForm: SubmitHandler<FormValue> = () => {
     router.push("/dashboard");
+
+    // simulate user authorization succeed by persisting auth token
+    localStorage.setItem("auth-token", "token");
   };
 
   return (

@@ -12,6 +12,7 @@ import Pagination from "@/components/Pagination";
 import { FilterParamsProps } from "./types";
 import { TabKey } from "./components/Tabs/types";
 import TableView from "./components/TableView/TableView";
+import { withAuth } from "@/utils/withAuth";
 
 const DashboardPage = () => {
   const [page, setPage] = useState(1);
@@ -75,4 +76,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default withAuth(DashboardPage);
