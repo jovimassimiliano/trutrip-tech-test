@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/classname";
 import { headingVariants } from "./styles";
 import { HeadingProps } from "./types";
 
