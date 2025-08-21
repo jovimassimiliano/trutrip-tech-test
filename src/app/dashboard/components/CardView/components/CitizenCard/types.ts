@@ -5,4 +5,9 @@ export type CitizenCardProps = {
     CitizenData,
     "name" | "status" | "gender"
   >]: CitizenData[key];
-} & { imageUrl: string; location: string; onClick?: VoidFunction };
+} & {
+  data: CitizenData;
+  imageUrl: string;
+  location: string;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+};
