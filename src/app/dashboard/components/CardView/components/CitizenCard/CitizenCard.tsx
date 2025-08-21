@@ -3,8 +3,11 @@ import Badge from "@/components/Badge";
 import { Card, CardContent } from "@/components/Card";
 import Heading from "@/components/Typography/Heading";
 import Text from "@/components/Typography/Text";
-import { MapPin } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { CitizenCardProps } from "./types";
+import Button from "@/components/Button";
+import { useDashboardContext } from "@/app/dashboard/context";
+import { cn } from "@/utils/classname";
 
 const CitizenCard = ({
   name,
@@ -12,8 +15,21 @@ const CitizenCard = ({
   imageUrl,
   location,
   gender,
+  data,
   ...props
 }: CitizenCardProps) => {
+  const { favorites, addFavorite, removeFavorite } = useDashboardContext();
+
+  const isFavorite = favorites.some((citizen) => citizen.id === data.id);
+
+  const handleAddFavorites = () => {
+    if (isFavorite) {
+      removeFavorite(data.id);
+    } else {
+      addFavorite(data);
+    }
+  };
+
   return (
     <Card
       {...props}
@@ -51,6 +67,13 @@ const CitizenCard = ({
             <MapPin size={12} />
             {location}
           </Text>
+          <Button className="cursor-pointer" onClick={handleAddFavorites}>
+            <Star
+              className={cn(
+                isFavorite ? "fill-amber-300 stroke-amber-300" : "fill-white",
+              )}
+            />
+          </Button>
         </div>
       </CardContent>
     </Card>

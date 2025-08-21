@@ -41,8 +41,10 @@ const CardView = ({ citizens, isLoading }: CardViewProps) => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {citizens?.map((citizen, index) => (
         <CitizenCard
-          onClick={() => {
-            setSelectCitizen(citizen);
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            if (e.currentTarget === e.target) {
+              setSelectCitizen(citizen);
+            }
           }}
           data-testid={`citizen-card-${index}`}
           key={citizen.id}
@@ -51,6 +53,7 @@ const CardView = ({ citizens, isLoading }: CardViewProps) => {
           status={citizen.status}
           location={citizen.location.name}
           gender={citizen.gender}
+          data={citizen}
         />
       ))}
       {selectedCitizen && (

@@ -41,6 +41,7 @@ const queryClient = new QueryClient({
 
 const ReactQueryProvider = ({ children }: PropsWithChildren) => {
   const [queryClientConfig] = useState(() => queryClient);
+
   return (
     <QueryClientProvider client={queryClientConfig}>
       {children}
